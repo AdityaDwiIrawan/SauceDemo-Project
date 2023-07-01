@@ -6,9 +6,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
+
     public static WebDriver driver;
 
-    public LoginPage(WebDriver driver){
+    public LoginPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
@@ -28,25 +29,24 @@ public class LoginPage {
     @FindBy(css = "h3")
     private WebElement errorText;
 
-    public String textError(){
+    public String textError() {
         return errorText.getText();
     }
 
-    public boolean verifyDshboard(){
+    public boolean verifyDshboard() {
         return verifyDashboard.isDisplayed();
     }
 
-    public void loginInput(String usrName, String pssword){
+    public void loginInput(String usrName, String pssword) {
         userName.sendKeys(usrName);
         password.sendKeys(pssword);
     }
 
-    public void clickLogin(){
+    public void clickLogin() {
         btnLogin.click();
     }
 
-    public boolean verifyLandingPage(){
+    public boolean verifyLandingPage() {
         return userName.isDisplayed();
     }
-
 }

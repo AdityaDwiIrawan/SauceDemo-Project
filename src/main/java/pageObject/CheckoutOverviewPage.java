@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-
 public class CheckoutOverviewPage {
 
     public static WebDriver driver;
@@ -31,32 +30,4 @@ public class CheckoutOverviewPage {
     public void verifyInvoice(String invoiceProduct){
         driver.findElement(By.xpath("//div[text()='" + invoiceProduct + "']//ancestor::div[@class='cart_item']/div[2]/a/div")).isDisplayed();
     }
-
-    public double getTotalItemWithTax() {
-        double subtotal = Double.parseDouble(itemTotal.getText());
-        double tax = Double.parseDouble(taxTotal.getText());
-        double totalResult = roundAvoid(subtotal + tax, 2);
-        return totalResult;
-    }
-
-    public static double roundAvoid(double value, int places) {
-        double scale = Math.pow(10, places);
-        return Math.round(value * scale) / scale;
-    }
-//    public double getTotalResult() {
-//        double subtotal = Double.parseDouble(itemTotal.getText().replaceAll("[^0-9, .]", ""));
-//        double tax = Double.parseDouble(taxTotal.getText().replaceAll("[^0-9, .]", ""));
-//        double totalResult = roundAvoid(subtotal + tax, 2);
-//        return totalResult;
-//    }
-//
-//    public double getTotalValue() {
-//        double totalValue = Double.parseDouble(totalPrice.getText().replaceAll("[^0-9, .]", ""));
-//        return totalValue;
-//    }
-//
-//    public static double roundAvoid(double value, int places) {
-//        double scale = Math.pow(10, places);
-//        return Math.round(value * scale) / scale;
-//    }
 }

@@ -2,10 +2,8 @@ package step_definitions.YourOverviewSteps;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import pageObject.CheckoutOverviewPage;
-import pageObject.LoginPage;
 import pageObject.YourInformationPage;
 import step_definitions.Hooks;
 
@@ -41,11 +39,6 @@ public class Invoice {
         assertEquals(expectedMessage,informationMessage.confirmationMessage.getText());
         Thread.sleep(2000);
     }
-
-//    @And("User verify price total {string}")
-//    public void userVerifyPriceTotal(String expectedPrice) throws InterruptedException {
-//
-//    }
 
     @And("User verify product {string}")
     public void userVerifyProduct(String verifyProd) throws InterruptedException {

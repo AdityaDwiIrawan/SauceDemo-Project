@@ -15,29 +15,10 @@ public class CartPage {
         this.driver = driver;
     }
 
-    @FindBy(xpath = "//select[@class='product_sort_container']")
-    private WebElement selectFilter;
-
-    @FindBy(xpath = "//span[@class='title']")
-    public WebElement productHeader;
-
-    @FindBy(xpath = "//a[@class='shopping_cart_link']")
-    public WebElement basket;
-
     @FindBy(xpath = "//button[@id='checkout']")
     public WebElement checkout;
 
-
-    public void selectProductFilter(String sort) {
-        Select a = new Select(selectFilter);
-        a.selectByVisibleText(sort);
-    }
-
     public void deleteProduct(String deleteProd){
         driver.findElement(By.xpath("//div[text()='" + deleteProd + "']//ancestor::div[@class='cart_item']/div[2]/div[2]/button")).click();
-    }
-
-    public void addProduct(String productName){
-        driver.findElement(By.xpath("//div[text()='"+productName+"']//ancestor::div[@class='inventory_item']/div[2]/div[2]/button")).click();
     }
 }

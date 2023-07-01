@@ -16,9 +16,10 @@ public class DataBuyerSteps {
     }
 
     @And("User click button continue")
-    public void userClickButtonContinue() {
+    public void userClickButtonContinue() throws InterruptedException {
         YourInformationPage informationPage = new YourInformationPage(webDriver);
         informationPage.continueBtn.click();
+        Thread.sleep(2000);
     }
 
     @And("User input {string} as firstName and input {string} as lastName and postalCode {string}")
@@ -29,15 +30,17 @@ public class DataBuyerSteps {
     }
 
     @Then("User see {string} error popUp on your information page")
-    public void userSeeErrorPopUpOnYourInformationPage(String errorPopUp ) {
+    public void userSeeErrorPopUpOnYourInformationPage(String errorPopUp ) throws InterruptedException {
         YourInformationPage infoPage = new YourInformationPage(webDriver);
         Assert.assertEquals(errorPopUp, infoPage.errortext());
+        Thread.sleep(2000);
     }
 
     @And("User click continue to your overview page")
-    public void userClickContinueToYourOverviewPage() {
+    public void userClickContinueToYourOverviewPage() throws InterruptedException {
         YourInformationPage infoPage = new YourInformationPage(webDriver);
         infoPage.continueBtn.click();
+        Thread.sleep(2000);
     }
 
     @And("User enters details firstname {string} lastname {string} and postalcode {string}")
