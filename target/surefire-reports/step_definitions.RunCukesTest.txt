@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: step_definitions.RunCukesTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 48.272 sec <<< FAILURE!
+User sort product cart(Sales)  Time elapsed: 11.784 sec  <<< FAILURE!
+java.lang.AssertionError: expected: java.lang.String<25.9> but was: java.lang.Double<25.9>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:743)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at step_definitions.YourOverviewSteps.Invoice.userVerifyThat(Invoice.java:25)
+	at ✽.User verify that "25.9"(classpath:features//Sales.feature:16)
+
