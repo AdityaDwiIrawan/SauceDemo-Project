@@ -1,5 +1,6 @@
 package step_definitions.LoginPageSteps;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,7 +10,6 @@ import pageObject.LoginPage;
 import step_definitions.Hooks;
 
 public class LoginSteps {
-
     public WebDriver webDriver;
 
     public LoginSteps(){
@@ -31,6 +31,13 @@ public class LoginSteps {
         loginPage.clickLogin();
         Thread.sleep(2000);
     }
+
+//    @And("User click login button")
+//    public void userClickLoginButton() throws InterruptedException {
+//        LoginPage loginPage = new LoginPage(webDriver);
+//        loginPage.clickLogin();
+//        Thread.sleep(2000);
+//    }
 
     @Then("User already on sales page")
     public void verifyDashboard() throws InterruptedException {

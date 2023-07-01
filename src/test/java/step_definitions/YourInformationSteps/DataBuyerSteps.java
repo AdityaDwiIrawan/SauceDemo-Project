@@ -43,7 +43,7 @@ public class DataBuyerSteps {
         Thread.sleep(2000);
     }
 
-    @And("User enters details firstname {string} lastname {string} and postalcode {string}")
+    @And("User enters details firstName {string} lastName {string} and postalCode {string}")
     public void theUserEntersDetailsFirstnameLastnameAndPostalcode(String firstName, String lastName, String postcode) throws InterruptedException {
         YourInformationPage informationPage = new YourInformationPage(webDriver);
         informationPage.inputDataBuyer(firstName, lastName, postcode);

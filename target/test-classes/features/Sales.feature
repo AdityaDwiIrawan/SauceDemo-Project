@@ -13,7 +13,7 @@ Feature: Sales
     And User delete product "Test.allTheThings() T-Shirt (Red)"
     And User click checkout button
 #    Then User already on checkout page
-    And User enters details firstname "Aditya" lastname "Dwi" and postalcode "1234"
+    And User enters details firstName "Aditya" lastName "Dwi" and postalCode "1234"
     And User click button continue
 #    Then User already on overview page
     And User verify product "Sauce Labs Onesie"
@@ -36,8 +36,8 @@ Feature: Sales
     Then User see "<errorPopUp>" error popUp on your information page
 
     Examples:
-      | firstName | lastName   | postalCode | errorPopUp                                     |
-      |           |            |            | Error: Input data user for invoice is required |
-      |           | Dwi Irawan | 53235      | Error: First Name is required                  |
-      | Aditya    |            | 12212      | Error: Last Name is required                   |
-      | Aditya    | Dwi Irawan |            | Error: Postal Code is required                 |
+      | firstName | lastName   | postalCode | errorPopUp                     |
+      |           |            |            | Error: First Name is required  |
+      |           | Dwi Irawan | 53235      | Error: First Name is required  |
+      | Aditya    |            | 12212      | Error: Last Name is required   |
+      | Aditya    | Dwi Irawan |            | Error: Postal Code is required |
