@@ -1,5 +1,6 @@
 package pageObject;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,21 +28,35 @@ public class CheckoutOverviewPage {
     @FindBy(xpath = "//div[@class='summary_tax_label']")
     public WebElement taxTotal;
 
-
-    public double getTotalResult() {
-        double subtotal = Double.parseDouble(itemTotal.getText().replaceAll("[^0-9, .]", ""));
-        double tax = Double.parseDouble(taxTotal.getText().replaceAll("[^0-9, .]", ""));
-        double totalResult = roundAvoid(subtotal + tax, 2);
-        return totalResult;
+    public void verifyInvoice(String invoiceProduct){
+        driver.findElement(By.xpath("//div[text()='" + invoiceProduct + "']//ancestor::div[@class='cart_item']/div[2]/a/div")).isDisplayed();
     }
 
-    public double getTotalValue() {
-        double totalValue = Double.parseDouble(totalPrice.getText().replaceAll("[^0-9, .]", ""));
-        return totalValue;
+    public double getTotalItemWithTax() {
+        double subtotal = Double.parseDouble(itemTotal.getText());
+        double tax = Double.parseDouble(taxTotal.getText());
+        double totalResult = roundAvoid(subtotal + tax, 2);
+        return totalResult;
     }
 
     public static double roundAvoid(double value, int places) {
         double scale = Math.pow(10, places);
         return Math.round(value * scale) / scale;
     }
+//    public double getTotalResult() {
+//        double subtotal = Double.parseDouble(itemTotal.getText().replaceAll("[^0-9, .]", ""));
+//        double tax = Double.parseDouble(taxTotal.getText().replaceAll("[^0-9, .]", ""));
+//        double totalResult = roundAvoid(subtotal + tax, 2);
+//        return totalResult;
+//    }
+//
+//    public double getTotalValue() {
+//        double totalValue = Double.parseDouble(totalPrice.getText().replaceAll("[^0-9, .]", ""));
+//        return totalValue;
+//    }
+//
+//    public static double roundAvoid(double value, int places) {
+//        double scale = Math.pow(10, places);
+//        return Math.round(value * scale) / scale;
+//    }
 }

@@ -1,4 +1,4 @@
 pageObject\CheckoutOverviewPage.class
 pageObject\YourInformationPage.class
-pageObject\CartPage.class
 pageObject\LoginPage.class
+pageObject\CartPage.class

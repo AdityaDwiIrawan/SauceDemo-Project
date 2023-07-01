@@ -2,8 +2,10 @@ package step_definitions.YourOverviewSteps;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import pageObject.CheckoutOverviewPage;
+import pageObject.LoginPage;
 import pageObject.YourInformationPage;
 import step_definitions.Hooks;
 
@@ -21,8 +23,8 @@ public class Invoice {
     @Then("User verify that {string}")
     public void userVerifyThat(String expectedPrice) throws InterruptedException {
         CheckoutOverviewPage informationPage = new CheckoutOverviewPage(webDriver);
-        System.out.println(informationPage.getTotalResult());
-        assertEquals(expectedPrice,informationPage.getTotalValue());
+        System.out.println(informationPage.totalPrice.getText());
+        assertEquals(expectedPrice,informationPage.totalPrice.getText());
         Thread.sleep(2000);
     }
 
@@ -37,6 +39,18 @@ public class Invoice {
     public void theUserAbleToSeeConfirmationMessageAs(String expectedMessage) throws InterruptedException {
         YourInformationPage informationMessage = new YourInformationPage(webDriver);
         assertEquals(expectedMessage,informationMessage.confirmationMessage.getText());
+        Thread.sleep(2000);
+    }
+
+//    @And("User verify price total {string}")
+//    public void userVerifyPriceTotal(String expectedPrice) throws InterruptedException {
+//
+//    }
+
+    @And("User verify product {string}")
+    public void userVerifyProduct(String verifyProd) throws InterruptedException {
+        CheckoutOverviewPage overviewPage = new CheckoutOverviewPage(webDriver);
+        overviewPage.verifyInvoice(verifyProd);
         Thread.sleep(2000);
     }
 }

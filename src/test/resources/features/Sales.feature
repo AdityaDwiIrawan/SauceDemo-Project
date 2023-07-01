@@ -13,7 +13,9 @@ Feature: Sales
     And User click checkout button
     And User enters details firstname "Aditya" lastname "Dwi" and postalcode "1234"
     And User click button continue
-    Then User verify that "25.9"
+    And User verify product "Sauce Labs Onesie"
+#    And User verify price total "Item total: $7.99"
+    Then User verify that "Total: $8.63"
     And User clicks finish button
     Then User able to see  confirmation message as "Thank you for your order!"
 

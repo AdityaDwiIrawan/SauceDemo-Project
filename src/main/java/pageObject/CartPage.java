@@ -15,12 +15,6 @@ public class CartPage {
         this.driver = driver;
     }
 
-    @FindBy(xpath = "//div[@class='cart_item']")
-    private WebElement productQuantity;
-
-    @FindBy(xpath = "//div[@class='cart_list']")
-    private WebElement productList;
-
     @FindBy(xpath = "//select[@class='product_sort_container']")
     private WebElement selectFilter;
 
@@ -33,13 +27,6 @@ public class CartPage {
     @FindBy(xpath = "//button[@id='checkout']")
     public WebElement checkout;
 
-    public boolean verifyProductAvailable(){
-        return productQuantity.isDisplayed();
-    }
-
-    public boolean verifyProductList(){
-        return productList.isDisplayed();
-    }
 
     public void selectProductFilter(String sort) {
         Select a = new Select(selectFilter);
@@ -48,7 +35,6 @@ public class CartPage {
 
     public void deleteProduct(String deleteProd){
         driver.findElement(By.xpath("//div[text()='" + deleteProd + "']//ancestor::div[@class='cart_item']/div[2]/div[2]/button")).click();
-
     }
 
     public void addProduct(String productName){
