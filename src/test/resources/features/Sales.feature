@@ -8,8 +8,8 @@ Feature: Sales
     Then User already on sales page
     When User sort product list by "Name (Z to A)"
     And User select item product "Test.allTheThings() T-Shirt (Red)" and "Sauce Labs Onesie"
-#    And User delete product "Test.allTheThings() T-Shirt (Red)"
     And User open cart button
+    And User delete product "Test.allTheThings() T-Shirt (Red)"
     And User click checkout button
     And User enters details firstname "Aditya" lastname "Dwi" and postalcode "1234"
     And User click button continue

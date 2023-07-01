@@ -46,6 +46,11 @@ public class CartPage {
         a.selectByVisibleText(sort);
     }
 
+    public void deleteProduct(String deleteProd){
+        driver.findElement(By.xpath("//div[text()='" + deleteProd + "']//ancestor::div[@class='cart_item']/div[2]/div[2]/button")).click();
+
+    }
+
     public void addProduct(String productName){
         driver.findElement(By.xpath("//div[text()='"+productName+"']//ancestor::div[@class='inventory_item']/div[2]/div[2]/button")).click();
     }

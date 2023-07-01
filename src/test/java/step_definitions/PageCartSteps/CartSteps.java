@@ -94,4 +94,11 @@ public class CartSteps {
         YourInformationPage pageInfo = new YourInformationPage(webDriver);
         Assert.assertTrue(pageInfo.verifyDshboardInfo());
     }
+
+    @And("User delete product {string}")
+    public void userDeleteProduct(String deleteProduk) throws InterruptedException {
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.deleteProduct(deleteProduk);
+        Thread.sleep(2000);
+    }
 }
