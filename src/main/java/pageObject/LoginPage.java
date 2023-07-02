@@ -47,6 +47,7 @@ public class LoginPage {
     }
 
     public boolean verifyLandingPage() {
+        driver.getCurrentUrl();
         return userName.isDisplayed();
     }
 }

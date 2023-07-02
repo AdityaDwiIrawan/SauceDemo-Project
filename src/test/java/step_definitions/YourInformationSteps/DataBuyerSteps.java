@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import pageObject.YourInformationPage;
 import step_definitions.Hooks;
 
+import static org.junit.Assert.assertEquals;
+
 public class DataBuyerSteps {
     public WebDriver webDriver;
 
@@ -29,6 +31,13 @@ public class DataBuyerSteps {
         Thread.sleep(2000);
     }
 
+    @Then("User able to see  confirmation message as {string}")
+    public void theUserAbleToSeeConfirmationMessageAs(String expectedMessage) throws InterruptedException {
+        YourInformationPage informationMessage = new YourInformationPage(webDriver);
+        assertEquals(expectedMessage,informationMessage.confirmationMessage.getText());
+        Thread.sleep(2000);
+    }
+
     @Then("User see {string} error popUp on your information page")
     public void userSeeErrorPopUpOnYourInformationPage(String errorPopUp ) throws InterruptedException {
         YourInformationPage infoPage = new YourInformationPage(webDriver);
@@ -47,6 +56,13 @@ public class DataBuyerSteps {
     public void theUserEntersDetailsFirstnameLastnameAndPostalcode(String firstName, String lastName, String postcode) throws InterruptedException {
         YourInformationPage informationPage = new YourInformationPage(webDriver);
         informationPage.inputDataBuyer(firstName, lastName, postcode);
+        Thread.sleep(2000);
+    }
+
+    @Then("User already on checkout page")
+    public void userAlreadyOnCheckoutPage() throws InterruptedException {
+        YourInformationPage pageInfo = new YourInformationPage(webDriver);
+        Assert.assertTrue(pageInfo.verifyDshboardInfo());
         Thread.sleep(2000);
     }
 }

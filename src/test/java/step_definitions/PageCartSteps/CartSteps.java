@@ -63,4 +63,10 @@ public class CartSteps {
         cartPage.deleteProduct(deleteProduk);
         Thread.sleep(2000);
     }
+
+    @Then("User already on cart page")
+    public void userAlreadyOnCartPage() {
+        CartPage cartPage = new CartPage(webDriver);
+        Assert.assertTrue(cartPage.verifyLinkCart());
+    }
 }

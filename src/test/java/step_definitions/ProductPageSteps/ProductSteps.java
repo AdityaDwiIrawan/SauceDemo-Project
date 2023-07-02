@@ -15,7 +15,6 @@ public class ProductSteps {
         this.webDriver = Hooks.webDriver;
     }
 
-
     @When("User sort product list by {string}")
     public void userSortProductListBy(String filter) throws InterruptedException {
         ProductPage productPage = new ProductPage(webDriver);
@@ -30,13 +29,6 @@ public class ProductSteps {
         productPage.addProduct(allthings);
         Thread.sleep(2000);
     }
-
-//    @And("User click cart button")
-//    public void theUserClickCartButton() throws InterruptedException {
-//        ProductPage productPage = new ProductPage(webDriver);
-//        productPage.basket.click();
-//        Thread.sleep(2000);
-//    }
 
     @And("User select item product {string}")
     public void userSelectItemProduct(String allthings) throws InterruptedException {

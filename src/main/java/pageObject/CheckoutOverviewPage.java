@@ -15,6 +15,10 @@ public class CheckoutOverviewPage {
         this.driver = driver;
     }
 
+
+    @FindBy(xpath = "//span[@class='title']")
+    public WebElement title;
+
     @FindBy(xpath = "//div[@class='summary_info_label summary_total_label']")
     public WebElement totalPrice;
 
@@ -29,5 +33,9 @@ public class CheckoutOverviewPage {
 
     public void verifyInvoice(String invoiceProduct){
         driver.findElement(By.xpath("//div[text()='" + invoiceProduct + "']//ancestor::div[@class='cart_item']/div[2]/a/div")).isDisplayed();
+    }
+
+    public boolean verifyTitleOverview() {
+        return title.isDisplayed();
     }
 }

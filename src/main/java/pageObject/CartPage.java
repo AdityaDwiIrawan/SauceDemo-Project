@@ -15,10 +15,18 @@ public class CartPage {
         this.driver = driver;
     }
 
+    @FindBy(xpath = "//span[@class='title']")
+    public WebElement titleCart;
+
     @FindBy(xpath = "//button[@id='checkout']")
     public WebElement checkout;
 
-    public void deleteProduct(String deleteProd){
+    public void deleteProduct(String deleteProd) {
         driver.findElement(By.xpath("//div[text()='" + deleteProd + "']//ancestor::div[@class='cart_item']/div[2]/div[2]/button")).click();
     }
+
+    public boolean verifyLinkCart(){
+        return titleCart.isDisplayed();
+    }
+
 }
