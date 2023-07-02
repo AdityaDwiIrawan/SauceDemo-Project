@@ -5,7 +5,6 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import pageObject.CheckoutOverviewPage;
-import pageObject.YourInformationPage;
 import step_definitions.Hooks;
 
 import static org.junit.Assert.assertEquals;
@@ -22,16 +21,6 @@ public class Invoice {
     @Then("User verify that {string}")
     public void userVerifyThat(String expectedPrice) throws InterruptedException {
         CheckoutOverviewPage informationPage = new CheckoutOverviewPage(webDriver);
-//        String priceText = informationPage.itemTotal.getText();
-//        Double pt = Double.parseDouble(priceText);
-//        String taxText = informationPage.taxTotal.getText();
-//        Double tt = Double.parseDouble(taxText);
-////        String totalText = informationPage.totalPrice.getText();
-////        Double tText = Double.parseDouble(totalText);
-//
-//        Double tText = pt + tt;
-//        Double a = Double.parseDouble(tText.toString());
-
         System.out.println(informationPage.getTotalResult());
         assertEquals(expectedPrice, informationPage.getTotalResult());
         Thread.sleep(2000);
@@ -54,8 +43,8 @@ public class Invoice {
     @And("User verify price total {string}")
     public void userVerifyPriceTotal(String expectedItemPrice) throws InterruptedException {
         CheckoutOverviewPage informationPage = new CheckoutOverviewPage(webDriver);
-        System.out.println(informationPage.itemTotal.getText());
-        assertEquals(expectedItemPrice, informationPage.itemTotal.getText());
+        System.out.println(informationPage.getPriceBar());
+        assertEquals(expectedItemPrice, informationPage.getPriceBar());
         Thread.sleep(2000);
     }
 
