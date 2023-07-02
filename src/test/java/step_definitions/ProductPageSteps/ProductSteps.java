@@ -34,13 +34,11 @@ public class ProductSteps {
     public void userSelectItemProduct(String allthings) throws InterruptedException {
         ProductPage productPage = new ProductPage(webDriver);
         productPage.addProduct(allthings);
-        Thread.sleep(2000);
     }
 
     @And("User click cart button")
     public void userClickCartButton() throws InterruptedException {
         ProductPage productPage = new ProductPage(webDriver);
         productPage.basket.click();
-        Thread.sleep(2000);
     }
 }

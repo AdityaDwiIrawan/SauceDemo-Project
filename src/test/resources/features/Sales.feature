@@ -18,7 +18,9 @@ Feature: Sales
     Then User already on overview page
     And User verify product "Sauce Labs Onesie"
     And User verify price total "Item total: $7.99"
+    And User verify tax "Tax: $0.64"
     Then User verify that "Total: $8.63"
+    #Masih harus dijumlahin
     And User clicks finish button
     Then User able to see  confirmation message as "Thank you for your order!"
 
