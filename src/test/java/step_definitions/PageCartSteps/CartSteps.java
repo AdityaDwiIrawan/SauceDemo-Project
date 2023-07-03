@@ -20,14 +20,20 @@ public class CartSteps {
     }
 
     @And("User click checkout button")
-    public void userClickCheckoutButton() throws InterruptedException {
+    public void userClickCheckoutButton() {
         CartPage cartPage = new CartPage(webDriver);
         cartPage.checkout.click();
     }
 
+    @And("User delete product {string}")
+    public void userDeleteProduct(String deleteProduct) {
+        CartPage cartPage = new CartPage(webDriver);
+        cartPage.deleteProduct(deleteProduct);
+    }
+
     //NEGATIVE
     @Given("User on login page")
-    public void userOnLoginPage() throws InterruptedException {
+    public void userOnLoginPage() {
         LoginPage loginPage = new LoginPage(webDriver);
         Assert.assertTrue(loginPage.verifyLandingPage());
     }
@@ -40,7 +46,7 @@ public class CartSteps {
     }
 
     @Then("User already on product page")
-    public void userAlreadyOnProductPage() throws InterruptedException {
+    public void userAlreadyOnProductPage() {
         LoginPage loginPage = new LoginPage(webDriver);
         Assert.assertTrue(loginPage.verifyDshboard());
     }
@@ -49,13 +55,6 @@ public class CartSteps {
     public void userAlreadyOnCheckoutInformation() throws InterruptedException {
         YourInformationPage pageInfo = new YourInformationPage(webDriver);
         Assert.assertTrue(pageInfo.verifyDshboardInfo());
-    }
-
-    @And("User delete product {string}")
-    public void userDeleteProduct(String deleteProduk) throws InterruptedException {
-        CartPage cartPage = new CartPage(webDriver);
-        cartPage.deleteProduct(deleteProduk);
-        Thread.sleep(2000);
     }
 
     @Then("User already on cart page")

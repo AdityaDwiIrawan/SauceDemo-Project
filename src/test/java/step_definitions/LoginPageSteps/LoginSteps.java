@@ -20,7 +20,6 @@ public class LoginSteps {
     public void verifyLandingPage() throws InterruptedException {
         LoginPage loginPage = new LoginPage(webDriver);
         Assert.assertTrue(loginPage.verifyLandingPage());
-        Thread.sleep(2000);
     }
 
     @When("User input {string} as userName and input {string} as password")
@@ -28,20 +27,17 @@ public class LoginSteps {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.loginInput(userName, password);
         loginPage.clickLogin();
-        Thread.sleep(2000);
     }
 
     @Then("User already on sales page")
     public void verifyDashboard() throws InterruptedException {
         LoginPage loginPage = new LoginPage(webDriver);
         Assert.assertTrue(loginPage.verifyDshboard());
-        Thread.sleep(2000);
     }
 
     @Then("User see {string} error text on login page")
     public void verifyErrorText(String errorText) throws InterruptedException {
         LoginPage loginPage = new LoginPage(webDriver);
         Assert.assertEquals(errorText, loginPage.textError());
-        Thread.sleep(2000);
     }
 }

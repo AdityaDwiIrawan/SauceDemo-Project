@@ -16,18 +16,16 @@ public class ProductSteps {
     }
 
     @When("User sort product list by {string}")
-    public void userSortProductListBy(String filter) throws InterruptedException {
+    public void userSortProductListBy(String filter) {
         ProductPage productPage = new ProductPage(webDriver);
         productPage.selectProductFilter(filter);
-        Thread.sleep(2000);
     }
 
     @And("User select item product {string} and {string}")
-    public void userSelectItemProductAnd(String onesie, String allthings) throws InterruptedException {
+    public void userSelectItemProductAnd(String onesie, String allthings) {
         ProductPage productPage = new ProductPage(webDriver);
         productPage.addProduct(onesie);
         productPage.addProduct(allthings);
-        Thread.sleep(2000);
     }
 
     @And("User select item product {string}")

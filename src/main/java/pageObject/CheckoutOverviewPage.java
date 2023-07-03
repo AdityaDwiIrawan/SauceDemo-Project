@@ -17,7 +17,6 @@ public class CheckoutOverviewPage {
         this.driver = driver;
     }
 
-
     @FindBy(xpath = "//span[@class='title']")
     public WebElement title;
 
