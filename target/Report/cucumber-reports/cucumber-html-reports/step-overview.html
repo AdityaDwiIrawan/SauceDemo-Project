@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="js/Chart.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/reporting.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<title>Cucumber-JVM Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber-JVM Report</p>
+      <ul class="nav navbar-nav navbar-right">
+                <li role="presentation" ><a href="feature-overview.html">Features</a></li>
+        <li role="presentation" ><a href="tag-overview.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="step-overview.html">Steps</a></li>
+        <li role="presentation" ><a href="failures-overview.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid" id="build-info">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-1">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Project</th>
+                          <th>Number</th>
+                        <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="info">
+            <td>Project Name</td>
+                          <td>1</td>
+                        <td>03 Jul 2023, 09:28</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div id="report-lead" class="container-fluid>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <h2>Steps Statistics</h2>
+              <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+          </div>
+  </div>
+</div>
+
+<div class="container-fluid" id="summary">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+              <table id="tablesorter" class="stats-table table-hover">
+
+          <thead>
+            <tr class="header">
+              <th>Implementation</th>
+              <th>Occurrences</th>
+              <th>Duration</th>
+              <th>Average</th>
+              <th>Ratio</th>
+            </tr>
+          </thead>
+
+          <tbody>
+                          <tr>
+                <td class="location">step_definitions.Hooks.closeBrowser()</td>
+                <td>5</td>
+                <td class="duration" data-value="13131618700">13s 131ms</td>
+                <td class="duration" data-value="2626323740">2s 626ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.Hooks.openBrowser()</td>
+                <td>5</td>
+                <td class="duration" data-value="11284081700">11s 284ms</td>
+                <td class="duration" data-value="2256816340">2s 256ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.LoginPageSteps.LoginSteps.inputCredential(java.lang.String,java.lang.String)</td>
+                <td>1</td>
+                <td class="duration" data-value="2406483700">2s 406ms</td>
+                <td class="duration" data-value="2406483700">2s 406ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.LoginPageSteps.LoginSteps.verifyDashboard()</td>
+                <td>1</td>
+                <td class="duration" data-value="2067305300">2s 067ms</td>
+                <td class="duration" data-value="2067305300">2s 067ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.LoginPageSteps.LoginSteps.verifyLandingPage()</td>
+                <td>1</td>
+                <td class="duration" data-value="2157897400">2s 157ms</td>
+                <td class="duration" data-value="2157897400">2s 157ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.PageCartSteps.CartSteps.userAlreadyOnCartPage()</td>
+                <td>1</td>
+                <td class="duration" data-value="64483400">064ms</td>
+                <td class="duration" data-value="64483400">064ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.PageCartSteps.CartSteps.userAlreadyOnCheckoutInformation()</td>
+                <td>4</td>
+                <td class="duration" data-value="145957900">145ms</td>
+                <td class="duration" data-value="36489475">036ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.PageCartSteps.CartSteps.userAlreadyOnProductPage()</td>
+                <td>4</td>
+                <td class="duration" data-value="276203700">276ms</td>
+                <td class="duration" data-value="69050925">069ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.PageCartSteps.CartSteps.userClickCheckoutButton()</td>
+                <td>5</td>
+                <td class="duration" data-value="436887700">436ms</td>
+                <td class="duration" data-value="87377540">087ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.PageCartSteps.CartSteps.userDeleteProduct(java.lang.String)</td>
+                <td>1</td>
+                <td class="duration" data-value="2114434200">2s 114ms</td>
+                <td class="duration" data-value="2114434200">2s 114ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.PageCartSteps.CartSteps.userInputAsUserNameAndInputAsPassword(java.lang.String,java.lang.String)</td>
+                <td>4</td>
+                <td class="duration" data-value="1919462600">1s 919ms</td>
+                <td class="duration" data-value="479865650">479ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.PageCartSteps.CartSteps.userOnLoginPage()</td>
+                <td>4</td>
+                <td class="duration" data-value="442535100">442ms</td>
+                <td class="duration" data-value="110633775">110ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.ProductPageSteps.ProductSteps.userClickCartButton()</td>
+                <td>5</td>
+                <td class="duration" data-value="460707900">460ms</td>
+                <td class="duration" data-value="92141580">092ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.ProductPageSteps.ProductSteps.userSelectItemProduct(java.lang.String)</td>
+                <td>4</td>
+                <td class="duration" data-value="324073500">324ms</td>
+                <td class="duration" data-value="81018375">081ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.ProductPageSteps.ProductSteps.userSelectItemProductAnd(java.lang.String,java.lang.String)</td>
+                <td>1</td>
+                <td class="duration" data-value="2168309200">2s 168ms</td>
+                <td class="duration" data-value="2168309200">2s 168ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.ProductPageSteps.ProductSteps.userSortProductListBy(java.lang.String)</td>
+                <td>1</td>
+                <td class="duration" data-value="2259483800">2s 259ms</td>
+                <td class="duration" data-value="2259483800">2s 259ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.YourInformationSteps.DataBuyerSteps.theUserAbleToSeeConfirmationMessageAs(java.lang.String)</td>
+                <td>1</td>
+                <td class="duration" data-value="2059780100">2s 059ms</td>
+                <td class="duration" data-value="2059780100">2s 059ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.YourInformationSteps.DataBuyerSteps.theUserEntersDetailsFirstnameLastnameAndPostalcode(java.lang.String,java.lang.String,java.lang.String)</td>
+                <td>1</td>
+                <td class="duration" data-value="2409815700">2s 409ms</td>
+                <td class="duration" data-value="2409815700">2s 409ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.YourInformationSteps.DataBuyerSteps.userAlreadyOnCheckoutPage()</td>
+                <td>1</td>
+                <td class="duration" data-value="54698200">054ms</td>
+                <td class="duration" data-value="54698200">054ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.YourInformationSteps.DataBuyerSteps.userClickButtonContinue()</td>
+                <td>1</td>
+                <td class="duration" data-value="154619200">154ms</td>
+                <td class="duration" data-value="154619200">154ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.YourInformationSteps.DataBuyerSteps.userClickContinueToYourOverviewPage()</td>
+                <td>4</td>
+                <td class="duration" data-value="441674800">441ms</td>
+                <td class="duration" data-value="110418700">110ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.YourInformationSteps.DataBuyerSteps.userInputAsFirstNameAndInputAsLastNameAndPostalCode(java.lang.String,java.lang.String,java.lang.String)</td>
+                <td>4</td>
+                <td class="duration" data-value="9364548200">9s 364ms</td>
+                <td class="duration" data-value="2341137050">2s 341ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.YourInformationSteps.DataBuyerSteps.userSeeErrorPopUpOnYourInformationPage(java.lang.String)</td>
+                <td>4</td>
+                <td class="duration" data-value="8258137700">8s 258ms</td>
+                <td class="duration" data-value="2064534425">2s 064ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.YourOverviewSteps.Invoice.theUserClicksFinishButton()</td>
+                <td>1</td>
+                <td class="duration" data-value="116338300">116ms</td>
+                <td class="duration" data-value="116338300">116ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.YourOverviewSteps.Invoice.userAlreadyOnOverviewPage()</td>
+                <td>1</td>
+                <td class="duration" data-value="2071653800">2s 071ms</td>
+                <td class="duration" data-value="2071653800">2s 071ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.YourOverviewSteps.Invoice.userVerifyInventoryItemPrice(java.lang.String)</td>
+                <td>1</td>
+                <td class="duration" data-value="109108600">109ms</td>
+                <td class="duration" data-value="109108600">109ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.YourOverviewSteps.Invoice.userVerifyPriceTotal(java.lang.String)</td>
+                <td>1</td>
+                <td class="duration" data-value="58983500">058ms</td>
+                <td class="duration" data-value="58983500">058ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.YourOverviewSteps.Invoice.userVerifyProduct(java.lang.String)</td>
+                <td>1</td>
+                <td class="duration" data-value="2053851100">2s 053ms</td>
+                <td class="duration" data-value="2053851100">2s 053ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.YourOverviewSteps.Invoice.userVerifyTax(java.lang.String)</td>
+                <td>1</td>
+                <td class="duration" data-value="63149300">063ms</td>
+                <td class="duration" data-value="63149300">063ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                          <tr>
+                <td class="location">step_definitions.YourOverviewSteps.Invoice.userVerifyThat(java.lang.String)</td>
+                <td>1</td>
+                <td class="duration" data-value="2118800800">2s 118ms</td>
+                <td class="duration" data-value="2118800800">2s 118ms</td>
+                <td class="passed">100.00%</td>
+              </tr>
+                      </tbody>
+
+          <tfoot class="total">
+            <tr>
+              <td>30</td>
+              <td>70</td>
+              <td class="duration">1m 10s 995ms</td>
+              <td class="duration">1s 014ms</td>
+              <td>Totals</td>
+            </tr>
+          </tfoot>
+
+        </table>
+          </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

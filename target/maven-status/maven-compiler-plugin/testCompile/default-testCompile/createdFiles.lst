@@ -1,0 +1,7 @@
+step_definitions\Hooks.class
+step_definitions\LoginPageSteps\LoginSteps.class
+step_definitions\YourInformationSteps\DataBuyerSteps.class
+step_definitions\RunCukesTest.class
+step_definitions\PageCartSteps\CartSteps.class
+step_definitions\YourOverviewSteps\Invoice.class
+step_definitions\ProductPageSteps\ProductSteps.class
