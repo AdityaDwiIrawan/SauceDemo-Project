@@ -30,7 +30,6 @@ public class Invoice {
     public void theUserClicksFinishButton() throws InterruptedException {
         CheckoutOverviewPage clickFinish = new CheckoutOverviewPage(webDriver);
         clickFinish.finishBtn.click();
-        Thread.sleep(2000);
     }
 
     @And("User verify product {string}")
@@ -40,12 +39,11 @@ public class Invoice {
         Thread.sleep(2000);
     }
 
-    @And("User verify price total {string}")
-    public void userVerifyPriceTotal(String expectedItemPrice) throws InterruptedException {
+    @And("User verify inventory item price {string}")
+    public void userVerifyInventoryItemPrice(String expectedInventoryItemPrice) {
         CheckoutOverviewPage informationPage = new CheckoutOverviewPage(webDriver);
         System.out.println(informationPage.getPriceBar());
-        assertEquals(expectedItemPrice, informationPage.getPriceBar());
-        Thread.sleep(2000);
+        assertEquals(expectedInventoryItemPrice, informationPage.getPriceBar());
     }
 
     @Then("User already on overview page")
@@ -56,10 +54,16 @@ public class Invoice {
     }
 
     @And("User verify tax {string}")
-    public void userVerifyTax(String taxCalculate) throws InterruptedException {
+    public void userVerifyTax(String taxCalculate) {
         CheckoutOverviewPage informationPage = new CheckoutOverviewPage(webDriver);
         System.out.println(informationPage.getTotalTax());
         assertEquals(taxCalculate, informationPage.getTotalTax());
-        Thread.sleep(2000);
+    }
+
+    @And("User verify price total {string}")
+    public void userVerifyPriceTotal(String expectedItemPrice) {
+        CheckoutOverviewPage informationPage = new CheckoutOverviewPage(webDriver);
+        System.out.println(informationPage.getItemTotal());
+        assertEquals(expectedItemPrice, informationPage.getItemTotal());
     }
 }

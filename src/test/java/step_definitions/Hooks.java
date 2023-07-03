@@ -1,5 +1,6 @@
 package step_definitions;
 
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -21,9 +22,9 @@ public class Hooks {
         webDriver.manage().window().maximize();
     }
 
-/*    @After
+    @After
     public void closeBrowser() throws InterruptedException {
         Thread.sleep(2000);
         webDriver.quit();
-    }*/
+    }
 }

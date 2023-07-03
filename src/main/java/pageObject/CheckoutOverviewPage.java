@@ -3,6 +3,7 @@ package pageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -29,8 +30,14 @@ public class CheckoutOverviewPage {
     public WebElement itemTotal;
 
 
-    @FindBy(xpath = "//div[@class='cart_list']/div[3]/div[2]/div[2]/div")
-    public WebElement priceBar;
+//    @FindBy(css = ".cart_item")
+//    public WebElement priceBar;
+
+    By priceBar = By.cssSelector(".cart_item");
+    By inventoryPriceBar = By.cssSelector(".inventory_item_price");
+
+//    @FindBy(css = ".inventory_item_price")
+//    public WebElement inventoryPriceBar;
 
     public void verifyInvoice(String invoiceProduct) {
         driver.findElement(By.xpath("//div[text()='" + invoiceProduct + "']//ancestor::div[@class='cart_item']/div[2]/a/div")).isDisplayed();
@@ -41,16 +48,23 @@ public class CheckoutOverviewPage {
     }
 
     public String getPriceBar() {
-        List<WebElement> cartItems = driver.findElements(By.cssSelector(".cart_item"));
+//        findElements(By.cssSelector(".cart_item")
+        List<WebElement> cartItems = driver.findElements(priceBar);
         double totalPrice = 0.0;
         for (WebElement cartItem : cartItems) {
-            WebElement priceElement = cartItem.findElement(By.cssSelector(".inventory_item_price"));
+            WebElement priceElement = cartItem.findElement(inventoryPriceBar);
             String priceText = priceElement.getText().replace("$", "");
             double price = Double.parseDouble(priceText.replaceAll("[^0-9, .]", ""));
             totalPrice += price;
         }
         DecimalFormat decimalFormat = new DecimalFormat("#0.00");
         return String.valueOf("$" + decimalFormat.format(totalPrice));
+    }
+
+    public String getItemTotal() {
+        double subtotal = Double.parseDouble(itemTotal.getText().replaceAll("[^0-9, .]", ""));
+        DecimalFormat decimalFormat = new DecimalFormat("#0.00");
+        return String.valueOf("Item total: $" + decimalFormat.format(subtotal));
     }
 
     public String getTotalTax() {

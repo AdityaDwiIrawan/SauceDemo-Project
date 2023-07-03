@@ -31,13 +31,13 @@ public class ProductSteps {
     }
 
     @And("User select item product {string}")
-    public void userSelectItemProduct(String allthings) throws InterruptedException {
+    public void userSelectItemProduct(String allthings)  {
         ProductPage productPage = new ProductPage(webDriver);
         productPage.addProduct(allthings);
     }
 
     @And("User click cart button")
-    public void userClickCartButton() throws InterruptedException {
+    public void userClickCartButton() {
         ProductPage productPage = new ProductPage(webDriver);
         productPage.basket.click();
     }

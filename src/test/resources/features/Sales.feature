@@ -10,18 +10,17 @@ Feature: Sales
     And User select item product "Test.allTheThings() T-Shirt (Red)" and "Sauce Labs Onesie"
     And User click cart button
     Then User already on cart page
-#    And User delete product "Test.allTheThings() T-Shirt (Red)"
+    And User delete product "Test.allTheThings() T-Shirt (Red)"
     And User click checkout button
     Then User already on checkout page
     And User enters details firstName "Aditya" lastName "Dwi" and postalCode "1234"
     And User click button continue
     Then User already on overview page
-#    And User verify product "Sauce Labs Onesie"
-#    And User Verify price product "$7.99"
-#    And User verify price total "Item total: $7.99"
-    And User verify price total "$23.98"
-    And User verify tax "Tax: $1.92"
-    Then User verify that "Total: $25.90"
+    And User verify product "Sauce Labs Onesie"
+    And User verify inventory item price "$7.99"
+    And User verify price total "Item total: $7.99"
+    And User verify tax "Tax: $0.64"
+    Then User verify that "Total: $8.63"
     And User clicks finish button
     Then User able to see  confirmation message as "Thank you for your order!"
 
@@ -31,7 +30,6 @@ Feature: Sales
     Then User already on product page
     And User select item product "Test.allTheThings() T-Shirt (Red)"
     And User click cart button
-#    Then User already on checkout product page
     And User click checkout button
     Then User already on checkout information
     And User input "<firstName>" as firstName and input "<lastName>" as lastName and postalCode "<postalCode>"

@@ -21,7 +21,6 @@ public class DataBuyerSteps {
     public void userClickButtonContinue() throws InterruptedException {
         YourInformationPage informationPage = new YourInformationPage(webDriver);
         informationPage.continueBtn.click();
-        Thread.sleep(2000);
     }
 
     @And("User input {string} as firstName and input {string} as lastName and postalCode {string}")
@@ -49,7 +48,6 @@ public class DataBuyerSteps {
     public void userClickContinueToYourOverviewPage() throws InterruptedException {
         YourInformationPage infoPage = new YourInformationPage(webDriver);
         infoPage.continueBtn.click();
-        Thread.sleep(2000);
     }
 
     @And("User enters details firstName {string} lastName {string} and postalCode {string}")
@@ -63,6 +61,5 @@ public class DataBuyerSteps {
     public void userAlreadyOnCheckoutPage() throws InterruptedException {
         YourInformationPage pageInfo = new YourInformationPage(webDriver);
         Assert.assertTrue(pageInfo.verifyDshboardInfo());
-        Thread.sleep(2000);
     }
 }
