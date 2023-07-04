@@ -11,7 +11,7 @@ public class Hooks {
     public static WebDriver webDriver;
 
     @Before
-    public void openBrowser(){
+    public void openBrowser() {
         ChromeOptions co = new ChromeOptions();
         WebDriverManager.chromedriver().setup();
         co.addArguments("--remote-allow-origins=*");

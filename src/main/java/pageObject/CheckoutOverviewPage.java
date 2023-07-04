@@ -38,6 +38,7 @@ public class CheckoutOverviewPage {
         return title.isDisplayed();
     }
 
+    //menjumlahkan total harga barang yang telah di checkout
     public String getPriceBar() {
         List<WebElement> cartItems = driver.findElements(priceBar);
         double totalPrice = 0.0;
@@ -51,12 +52,14 @@ public class CheckoutOverviewPage {
         return String.valueOf("$" + decimalFormat.format(totalPrice));
     }
 
+    //verifikasi harga Total Item yang ada di halaman invoice
     public String getItemTotal() {
         double subtotal = Double.parseDouble(itemTotal.getText().replaceAll("[^0-9, .]", ""));
         DecimalFormat decimalFormat = new DecimalFormat("#0.00");
         return String.valueOf("Item total: $" + decimalFormat.format(subtotal));
     }
 
+    //menghitung harga pajak dari jumlah barang yang telah di hitung dan diverifikasi
     public String getTotalTax() {
         double subtotal = Double.parseDouble(itemTotal.getText().replaceAll("[^0-9, .]", ""));
         double taxrate = 0.08;
@@ -65,6 +68,7 @@ public class CheckoutOverviewPage {
         return String.valueOf("Tax: $" + decimalFormat.format(taxAmounts));
     }
 
+    //menjumlahkan harga barang dan pajak
     public String getTotalResult() {
         double subtotal = Double.parseDouble(itemTotal.getText().replaceAll("[^0-9, .]", ""));
         double tax = Double.parseDouble(getTotalTax().replaceAll("[^0-9, .]", ""));

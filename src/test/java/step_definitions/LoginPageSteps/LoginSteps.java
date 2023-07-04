@@ -17,26 +17,26 @@ public class LoginSteps {
     }
 
     @Given("User already on login page")
-    public void verifyLandingPage() throws InterruptedException {
+    public void verifyLandingPage()  {
         LoginPage loginPage = new LoginPage(webDriver);
         Assert.assertTrue(loginPage.verifyLandingPage());
     }
 
     @When("User input {string} as userName and input {string} as password")
-    public void inputCredential(String userName, String password) throws InterruptedException {
+    public void inputCredential(String userName, String password)  {
         LoginPage loginPage = new LoginPage(webDriver);
         loginPage.loginInput(userName, password);
         loginPage.clickLogin();
     }
 
     @Then("User already on sales page")
-    public void verifyDashboard() throws InterruptedException {
+    public void verifyDashboard() {
         LoginPage loginPage = new LoginPage(webDriver);
         Assert.assertTrue(loginPage.verifyDshboard());
     }
 
     @Then("User see {string} error text on login page")
-    public void verifyErrorText(String errorText) throws InterruptedException {
+    public void verifyErrorText(String errorText)  {
         LoginPage loginPage = new LoginPage(webDriver);
         Assert.assertEquals(errorText, loginPage.textError());
     }

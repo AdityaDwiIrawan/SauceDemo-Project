@@ -52,7 +52,7 @@ public class CartSteps {
     }
 
     @Then("User already on checkout information")
-    public void userAlreadyOnCheckoutInformation() throws InterruptedException {
+    public void userAlreadyOnCheckoutInformation()  {
         YourInformationPage pageInfo = new YourInformationPage(webDriver);
         Assert.assertTrue(pageInfo.verifyDshboardInfo());
     }
