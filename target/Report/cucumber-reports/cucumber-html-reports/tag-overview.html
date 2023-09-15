@@ -49,32 +49,32 @@ $(document).ready(function() {
   $(document).ready(function() {
 
     var chartData = {
-        labels: ["@Sales"],
+        labels: ["@Login","@Sales"],
         datasets: [
             {
                 label: 'Passed',
                 backgroundColor: "#92DD96",
-                data: [100.00]
+                data: [100.00, 100.00]
             },
             {
                 label: 'Failed',
                 backgroundColor: "#F2928C",
-                data: [0.00]
+                data: [0.00, 0.00]
             },
             {
                 label: 'Skipped',
                 backgroundColor: "#8AF",
-                data: [0.00]
+                data: [0.00, 0.00]
             },
             {
                 label: 'Pending',
                 backgroundColor: "#F5F28F",
-                data: [0.00]
+                data: [0.00, 0.00]
             },
             {
                 label: 'Undefined',
                 backgroundColor: "#F5B975",
-                data: [0.00]
+                data: [0.00, 0.00]
             }
         ]
     };
@@ -133,9 +133,9 @@ $(document).ready(function() {
         </thead>
         <tbody>
           <tr class="info">
-            <td>Project Name</td>
+            <td>BDD-SauceDemo</td>
                           <td>1</td>
-                        <td>04 Jul 2023, 03:00</td>
+                        <td>16 Sep 2023, 06:49</td>
           </tr>
         </tbody>
       </table>
@@ -192,6 +192,21 @@ $(document).ready(function() {
 
   <tbody>
           <tr>
+        <td class="tagname"><a href="Login.html">@Login</a></td>
+        
+        <td  class="passed"    >5</td>
+        <td >0</td>
+        <td class="total">5</td>
+        <td      class="passed"    >15</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">15</td>
+        <td class="duration" data-value="2925906100">2s 925ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
         <td class="tagname"><a href="Sales.html">@Sales</a></td>
         
         <td  class="passed"    >5</td>
@@ -203,24 +218,24 @@ $(document).ready(function() {
         <td >0</td>
         <td >0</td>
         <td class="total">60</td>
-        <td class="duration" data-value="10411465000">10s 411ms</td>
+        <td class="duration" data-value="10202325800">10s 202ms</td>
         <td class="passed">Passed</td>
       </tr>
       </tbody>
 
   <tfoot class="total">
     <tr>
-      <td>1</td>
-            <td>5</td>
+      <td>2</td>
+            <td>10</td>
       <td>0</td>
-      <td>5</td>
-      <td>60</td>
-      <td>0</td>
-      <td>0</td>
+      <td>10</td>
+      <td>75</td>
       <td>0</td>
       <td>0</td>
-      <td>60</td>
-      <td class="duration">10s 411ms</td>
+      <td>0</td>
+      <td>0</td>
+      <td>75</td>
+      <td class="duration">13s 128ms</td>
       <td></td>
     </tr>
     <tr>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="10" time="41.111">
+    <testcase classname="Login" name="Normal login" time="6.816">
+        <system-out><![CDATA[Given User already on login page............................................passed
+When User input "standard_user" as userName and input "secret_sauce" as password.passed
+Then User already on sales page.............................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Login" name="Invalid login" time="2.605">
+        <system-out><![CDATA[Given User already on login page............................................passed
+When User input "standard_user" as userName and input "" as password........passed
+Then User see "Epic sadface: Password is required" error text on login page.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Login" name="Invalid login 2" time="3.81">
+        <system-out><![CDATA[Given User already on login page............................................passed
+When User input "" as userName and input "secret_sauce" as password.........passed
+Then User see "Epic sadface: Username is required" error text on login page.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Login" name="Invalid login 3" time="2.71">
+        <system-out><![CDATA[Given User already on login page............................................passed
+When User input "Aditya" as userName and input "dwi" as password............passed
+Then User see "Epic sadface: Username and password do not match any user in this service" error text on login page.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Login" name="Invalid login 4" time="2.548">
+        <system-out><![CDATA[Given User already on login page............................................passed
+When User input "" as userName and input "" as password.....................passed
+Then User see "Epic sadface: Username is required" error text on login page.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Sales" name="User checkout product on SauceDemo" time="4.899">
+        <system-out><![CDATA[Given User already on login page............................................passed
+When User input "standard_user" as userName and input "secret_sauce" as password.passed
+Then User already on sales page.............................................passed
+When User sort product list by "Name (Z to A)"..............................passed
+And User select item product "Test.allTheThings() T-Shirt (Red)" and "Sauce Labs Onesie".passed
+And User click cart button..................................................passed
+Then User already on cart page..............................................passed
+When User delete product "Test.allTheThings() T-Shirt (Red)"................passed
+And User click checkout button..............................................passed
+Then User already on checkout page..........................................passed
+When User enters details firstName "Aditya" lastName "Dwi" and postalCode "1234".passed
+And User click button continue..............................................passed
+Then User already on overview page..........................................passed
+And User verify product "Sauce Labs Onesie".................................passed
+And User verify inventory item price "$7.99"................................passed
+And User verify price total "Item total: $7.99".............................passed
+And User verify tax "Tax: $0.64"............................................passed
+And User verify that "Total: $8.63".........................................passed
+When User click finish button...............................................passed
+Then User able to see  confirmation message as "Thank you for your order!"..passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Sales" name="User cannot input data checkout with invalid data" time="3.775">
+        <system-out><![CDATA[Given User on login page....................................................passed
+When User input "standard_user" as UserName and input "secret_sauce" as Password.passed
+Then User already on product page...........................................passed
+When User select item product "Test.allTheThings() T-Shirt (Red)"...........passed
+And User click cart button..................................................passed
+And User click checkout button..............................................passed
+Then User already on checkout information...................................passed
+When User input "" as firstName and input "" as lastName and postalCode ""..passed
+And User click continue to your overview page...............................passed
+Then User see "Error: First Name is required" error popUp on your information page.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Sales" name="User cannot input data checkout with invalid data 2" time="3.116">
+        <system-out><![CDATA[Given User on login page....................................................passed
+When User input "standard_user" as UserName and input "secret_sauce" as Password.passed
+Then User already on product page...........................................passed
+When User select item product "Test.allTheThings() T-Shirt (Red)"...........passed
+And User click cart button..................................................passed
+And User click checkout button..............................................passed
+Then User already on checkout information...................................passed
+When User input "" as firstName and input "Dwi Irawan" as lastName and postalCode "53235".passed
+And User click continue to your overview page...............................passed
+Then User see "Error: First Name is required" error popUp on your information page.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Sales" name="User cannot input data checkout with invalid data 3" time="5.041">
+        <system-out><![CDATA[Given User on login page....................................................passed
+When User input "standard_user" as UserName and input "secret_sauce" as Password.passed
+Then User already on product page...........................................passed
+When User select item product "Test.allTheThings() T-Shirt (Red)"...........passed
+And User click cart button..................................................passed
+And User click checkout button..............................................passed
+Then User already on checkout information...................................passed
+When User input "Aditya" as firstName and input "" as lastName and postalCode "12212".passed
+And User click continue to your overview page...............................passed
+Then User see "Error: Last Name is required" error popUp on your information page.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Sales" name="User cannot input data checkout with invalid data 4" time="4.807">
+        <system-out><![CDATA[Given User on login page....................................................passed
+When User input "standard_user" as UserName and input "secret_sauce" as Password.passed
+Then User already on product page...........................................passed
+When User select item product "Test.allTheThings() T-Shirt (Red)"...........passed
+And User click cart button..................................................passed
+And User click checkout button..............................................passed
+Then User already on checkout information...................................passed
+When User input "Aditya" as firstName and input "Dwi Irawan" as lastName and postalCode "".passed
+And User click continue to your overview page...............................passed
+Then User see "Error: Postal Code is required" error popUp on your information page.passed
+]]></system-out>
+    </testcase>
+</testsuite>

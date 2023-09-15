@@ -51,7 +51,7 @@ $(document).ready(function() {
     var chartData = {
         datasets: [{
             data: [
-                60,
+                75,
                 0,
                 0,
                 0,
@@ -94,7 +94,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 60) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 75) / 100;
                         return tooltipLabel + ': ' + tooltipData + ' (' + tooltipPercentage + '%)';
                     }
                 }
@@ -107,7 +107,7 @@ $(document).ready(function() {
     var chartData = {
         datasets: [{
             data: [
-                5,
+                10,
                 0
             ],
             backgroundColor: [
@@ -144,7 +144,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 5) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 10) / 100;
                         return tooltipLabel + ': ' + tooltipData + ' (' + tooltipPercentage + '%)';
                     }
                 }
@@ -157,7 +157,7 @@ $(document).ready(function() {
     var chartData = {
         datasets: [{
             data: [
-                   1,
+                   2,
                    0
                ],
                backgroundColor: [
@@ -191,7 +191,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 1) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 2) / 100;
                         return tooltipLabel + ': ' + tooltipData + ' (' + tooltipPercentage + '%)';
                     }
                 }
@@ -231,9 +231,9 @@ $(document).ready(function() {
         </thead>
         <tbody>
           <tr class="info">
-            <td>Project Name</td>
+            <td>BDD-SauceDemo</td>
                           <td>1</td>
-                        <td>04 Jul 2023, 03:00</td>
+                        <td>16 Sep 2023, 06:49</td>
           </tr>
         </tbody>
       </table>
@@ -323,6 +323,21 @@ $(document).ready(function() {
 
   <tbody>
           <tr>
+        <td class="tagname"><a href="classpath-features--Login-feature.html">Login</a></td>
+        
+        <td  class="passed"    >5</td>
+        <td >0</td>
+        <td class="total">5</td>
+        <td      class="passed"    >15</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">15</td>
+        <td class="duration" data-value="2925906100">2s 925ms</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
         <td class="tagname"><a href="classpath-features--Sales-feature.html">Sales</a></td>
         
         <td  class="passed"    >5</td>
@@ -334,24 +349,24 @@ $(document).ready(function() {
         <td >0</td>
         <td >0</td>
         <td class="total">60</td>
-        <td class="duration" data-value="10411465000">10s 411ms</td>
+        <td class="duration" data-value="10202325800">10s 202ms</td>
         <td class="passed">Passed</td>
       </tr>
       </tbody>
 
   <tfoot class="total">
     <tr>
-      <td>1</td>
-            <td>5</td>
+      <td>2</td>
+            <td>10</td>
       <td>0</td>
-      <td>5</td>
-      <td>60</td>
-      <td>0</td>
-      <td>0</td>
+      <td>10</td>
+      <td>75</td>
       <td>0</td>
       <td>0</td>
-      <td>60</td>
-      <td class="duration">10s 411ms</td>
+      <td>0</td>
+      <td>0</td>
+      <td>75</td>
+      <td class="duration">13s 128ms</td>
       <td></td>
     </tr>
     <tr>

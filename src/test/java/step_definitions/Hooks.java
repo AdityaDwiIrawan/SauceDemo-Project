@@ -1,30 +1,37 @@
 package step_definitions;
 
-import io.cucumber.java.After;
+import context.TestContext;
+import driver.WebDriverInstance;
 import io.cucumber.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+
 
 public class Hooks {
+
     public static WebDriver webDriver;
+    private final TestContext context;
+
+    public Hooks(TestContext context) {
+        this.context = context;
+    }
 
     @Before
     public void openBrowser() {
-        ChromeOptions co = new ChromeOptions();
-        WebDriverManager.chromedriver().setup();
-        co.addArguments("--remote-allow-origins=*");
-
-        webDriver = new ChromeDriver(co);
-        String URL = "https://www.saucedemo.com/";
-        webDriver.navigate().to(URL);
-        webDriver.manage().window().maximize();
+        webDriver = WebDriverInstance.initialize(Boolean.parseBoolean(System.getProperty("running-on-hub", "false")));
+        context.driver = webDriver;
+        context.driverWait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
     }
 
-    @After
-    public void closeBrowser() throws InterruptedException {
-        Thread.sleep(2000);
-        webDriver.quit();
-    }
+
+//    @After
+//    public void closeBrowser() throws InterruptedException {
+//        Thread.sleep(2000);
+//        webDriver.quit();
+//    }
 }
