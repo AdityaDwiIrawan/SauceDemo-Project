@@ -1,5 +1,6 @@
 package step_definitions;
 
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -10,16 +11,14 @@ import org.junit.runner.RunWith;
         tags = "@Login or @Sales",
         features = {"classpath:features/"},
         glue = {"classpath:step_definitions"},
-        plugin = {
-                "pretty",
+        plugin = {"pretty",
                 "json:target/cucumber.json",
                 "html:target/site/cucumber-pretty",
                 "json:target/cucumber/cucumber.json",
                 "html:target/cucumber-report/cucumber.html",
                 "junit:target/cucumber-report/cucumber.xml",
                 "message:target/cucumber-report/cucumber.json",
-                "html:target/result.html",
-                "me.jvt.cucumber.report.PrettyReports:report"},
+                "html:target/result.html"},
         snippets = CucumberOptions.SnippetType.CAMELCASE)
 
 public class RunCukesTest {

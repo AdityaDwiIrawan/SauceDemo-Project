@@ -1,7 +1,5 @@
-pageObject\ProductPage.class
-driver\WebDriverInstance.class
 pageObject\CheckoutOverviewPage.class
+pageObject\ProductPage.class
 pageObject\YourInformationPage.class
 pageObject\CartPage.class
 pageObject\LoginPage.class
-context\TestContext.class

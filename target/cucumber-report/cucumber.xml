@@ -1,36 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="10" time="41.111">
-    <testcase classname="Login" name="Normal login" time="6.816">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="6" time="29.082">
+    <testcase classname="Login" name="Normal login" time="8.164">
         <system-out><![CDATA[Given User already on login page............................................passed
 When User input "standard_user" as userName and input "secret_sauce" as password.passed
 Then User already on sales page.............................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Login" name="Invalid login" time="2.605">
-        <system-out><![CDATA[Given User already on login page............................................passed
-When User input "standard_user" as userName and input "" as password........passed
-Then User see "Epic sadface: Password is required" error text on login page.passed
-]]></system-out>
-    </testcase>
-    <testcase classname="Login" name="Invalid login 2" time="3.81">
-        <system-out><![CDATA[Given User already on login page............................................passed
-When User input "" as userName and input "secret_sauce" as password.........passed
-Then User see "Epic sadface: Username is required" error text on login page.passed
-]]></system-out>
-    </testcase>
-    <testcase classname="Login" name="Invalid login 3" time="2.71">
-        <system-out><![CDATA[Given User already on login page............................................passed
-When User input "Aditya" as userName and input "dwi" as password............passed
-Then User see "Epic sadface: Username and password do not match any user in this service" error text on login page.passed
-]]></system-out>
-    </testcase>
-    <testcase classname="Login" name="Invalid login 4" time="2.548">
-        <system-out><![CDATA[Given User already on login page............................................passed
-When User input "" as userName and input "" as password.....................passed
-Then User see "Epic sadface: Username is required" error text on login page.passed
-]]></system-out>
-    </testcase>
-    <testcase classname="Sales" name="User checkout product on SauceDemo" time="4.899">
+    <testcase classname="Sales" name="User checkout product on SauceDemo" time="4.105">
         <system-out><![CDATA[Given User already on login page............................................passed
 When User input "standard_user" as userName and input "secret_sauce" as password.passed
 Then User already on sales page.............................................passed
@@ -53,7 +29,7 @@ When User click finish button...............................................pass
 Then User able to see  confirmation message as "Thank you for your order!"..passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Sales" name="User cannot input data checkout with invalid data" time="3.775">
+    <testcase classname="Sales" name="User cannot input data checkout with invalid data" time="3.252">
         <system-out><![CDATA[Given User on login page....................................................passed
 When User input "standard_user" as UserName and input "secret_sauce" as Password.passed
 Then User already on product page...........................................passed
@@ -66,7 +42,7 @@ And User click continue to your overview page...............................pass
 Then User see "Error: First Name is required" error popUp on your information page.passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Sales" name="User cannot input data checkout with invalid data 2" time="3.116">
+    <testcase classname="Sales" name="User cannot input data checkout with invalid data 2" time="4.378">
         <system-out><![CDATA[Given User on login page....................................................passed
 When User input "standard_user" as UserName and input "secret_sauce" as Password.passed
 Then User already on product page...........................................passed
@@ -79,7 +55,7 @@ And User click continue to your overview page...............................pass
 Then User see "Error: First Name is required" error popUp on your information page.passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Sales" name="User cannot input data checkout with invalid data 3" time="5.041">
+    <testcase classname="Sales" name="User cannot input data checkout with invalid data 3" time="3.741">
         <system-out><![CDATA[Given User on login page....................................................passed
 When User input "standard_user" as UserName and input "secret_sauce" as Password.passed
 Then User already on product page...........................................passed
@@ -92,7 +68,7 @@ And User click continue to your overview page...............................pass
 Then User see "Error: Last Name is required" error popUp on your information page.passed
 ]]></system-out>
     </testcase>
-    <testcase classname="Sales" name="User cannot input data checkout with invalid data 4" time="4.807">
+    <testcase classname="Sales" name="User cannot input data checkout with invalid data 4" time="4.697">
         <system-out><![CDATA[Given User on login page....................................................passed
 When User input "standard_user" as UserName and input "secret_sauce" as Password.passed
 Then User already on product page...........................................passed

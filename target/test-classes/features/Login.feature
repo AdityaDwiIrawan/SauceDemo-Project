@@ -1,7 +1,7 @@
-@Login
 Feature: Login
   As a user I want to login website sauce demo
 
+  @Login
   Scenario: Normal login
     Given User already on login page
     When User input "standard_user" as userName and input "secret_sauce" as password
